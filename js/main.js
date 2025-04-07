@@ -356,3 +356,70 @@ function probarCombinacion() {
     document.getElementById("combinacionViales").textContent = `[ ]`;
   }
 }
+
+//---------------------------------------------------------------------------
+
+function mostrarSalaFinal() {
+  const salaImagen = 'img/sala_final.jpg';
+  const descripcion = `
+    El acólito ingresa a la cámara sellada. El aire es denso y cargado de energía disforme.
+    Un círculo de cultistas entona cánticos blasfemos mientras, en el centro, un psíquico mutado tiembla, al borde de ser poseído.
+    Una voz en su cabeza —¿el Emperador...?— le susurra qué hacer.
+  `;
+
+  const decisiones = [
+    {
+      texto: "Intentar salvar al psíquico",
+      resultado: `
+        El acólito interrumpe el ritual e intenta liberar al psíquico del influjo del Caos.
+        Tras un sangriento combate logra romper el círculo, pero el psíquico huye y más tarde causa una masacre.
+        La Inquisición castiga al acólito por su imprudencia.
+      `
+    },
+    {
+      texto: "Purgar la herejía con fuego sagrado",
+      resultado: `
+        Sin dudarlo, el acólito activa granadas de fusión y lanza proyectiles incendiarios.
+        El ritual se interrumpe abruptamente, y los cultistas mueren entre gritos.
+        El psíquico es incinerado antes de que la entidad pueda tomar control.
+        El Emperador estará complacido.
+      `
+    },
+    {
+      texto: "Aceptar la voz en su mente",
+      resultado: `
+        Convencido de que el Emperador le habla, el acólito se arrodilla y acepta su "guía".
+        La entidad demoníaca penetra su alma, y en segundos ya no queda nada humano.
+        El acólito se convierte en un nuevo heraldo de la disformidad.
+      `
+    }
+  ];
+
+  const contenedor = document.getElementById("juego");
+  contenedor.innerHTML = `
+    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div class="descripcion-sala">${descripcion}</div>
+    <div class="contenedor-sala">
+      <div class="botones-sala">
+        ${decisiones.map((d, i) => `<button class="btn-opcion" onclick="mostrarResultadoFinal(${i})">${d.texto}</button>`).join('')}
+      </div>
+      <div id="resultado-final" class="texto-sala"></div>
+    </div>
+    <div id="boton-final" style="display: none; text-align: center; margin-top: 20px;">
+      <button onclick="mostrarTextoFinal()">Continuar</button>
+    </div>
+  `;
+
+  window._decisionesFinal = decisiones;
+}
+
+function mostrarResultadoFinal(index) {
+  const texto = window._decisionesFinal[index].resultado;
+  document.getElementById("resultado-final").innerHTML = `<p>${texto}</p>`;
+
+  const botones = document.querySelectorAll(".btn-opcion");
+  botones.forEach(btn => btn.disabled = true);
+
+  document.getElementById("boton-final").style.display = "block";
+}
+
