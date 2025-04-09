@@ -278,7 +278,7 @@ function seleccionarSimbolo(opcion) {
 //----------------------------------------------------------------
 
 function mostrarLaboratorioGenetico() {
-  const salaImagen = 'img/laboratorio_genetico.jpg';
+  const salaImagen = 'img/room_laboratorium.png';
   const descripcion = `
     <p>Te adentras en el <strong>Laboratorium Biologicus</strong>, una cámara revestida de acero y cobre, donde tubos con fluidos burbujean suavemente.</p>
     <p>Luces parpadeantes iluminan bancos de trabajo abandonados, documentos mojados por reactivos, y cuerpos parcialmente diseccionados bajo vitrinas de stasis.</p>
@@ -293,7 +293,7 @@ function mostrarLaboratorioGenetico() {
 
   const contenedor = document.getElementById("juego");
   contenedor.innerHTML = `
-    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
     <div id="descripcion-laboratorio">
       ${descripcion}
     </div>
@@ -393,7 +393,7 @@ function probarCombinacion() {
 //---------------------------------------------------------------------------
 
 function mostrarSalaFinal() {
-  const salaImagen = 'img/sala_final.jpg';
+  const salaImagen = 'img/room_camarasellada.png';
   const descripcion = `
     El acólito ingresa a la cámara sellada. El aire es denso y cargado de energía disforme.
     Un círculo de cultistas entona cánticos blasfemos mientras, en el centro, un psíquico mutado tiembla, al borde de ser poseído.
@@ -430,7 +430,7 @@ function mostrarSalaFinal() {
 
   const contenedor = document.getElementById("juego");
   contenedor.innerHTML = `
-    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
     <div class="descripcion-sala">${descripcion}</div>
     <div class="contenedor-sala">
       <div class="botones-sala">
