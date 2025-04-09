@@ -25,17 +25,30 @@ function setSalaImagen(url) {
 
 // Pantalla de introducción
 function mostrarIntroduccion() {
-  setSalaImagen("assets/intro.jpg");
+  imagenSala.style.display = "none";
+
   contenedorTerminal.className = "intro-terminal";
 
+  // Crear contenedor general
   const introDiv = document.createElement("div");
   introDiv.id = "intro";
   introDiv.classList.add("typewriter");
 
+  // Crear el form desde el principio
+  const form = document.createElement("div");
+  form.innerHTML = `
+    <p>Introduce tu nombre, acólito:</p>
+    <input type="text" id="nombreInput" placeholder="Nombre del acólito">
+    <button onclick="iniciarMision()">Comenzar misión</button>
+  `;
+
+  // Insertar en la terminal
   contenedorTerminal.innerHTML = "";
   contenedorTerminal.appendChild(introDiv);
+  contenedorTerminal.appendChild(form);
 
-  typeText(textos.introduccion, introDiv, pedirNombre);
+  // Iniciar efecto de tipeo, sin bloquear el form
+  typeText(textos.introduccion, introDiv);
 }
 
 // Input para el nombre del acólito
@@ -58,20 +71,30 @@ function iniciarMision() {
     return;
   }
   sessionStorage.setItem("acolito", nombre);
+
+  // Mostrar imagen de sala cuando arranca el juego
+  imagenSala.style.display = "block";
+
   cargarSalaDesembarco();
 }
 
 // Pantalla 2: Sala de Desembarco
 function cargarSalaDesembarco() {
-  setSalaImagen("assets/sala-desembarco.jpg");
+  const salaImagen = 'img/room_CaldriaIV.png';
+  //setSalaImagen("img/room_CaldriaIV.png");
   contenedorTerminal.className = ""; // reset estilo terminal
+
+  const nombre = sessionStorage.getItem("acolito");
+
   contenedorTerminal.innerHTML = `
-    <p>Has descendido en la superficie de Caldria VI, <strong>${sessionStorage.getItem("acolito")}</strong>.</p>
-    <p>El aire es denso y el olor a ozono lo invade todo. Las puertas de la antigua instalación se alzan frente a ti.</p>
+    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
+    <p>Has descendido sobre la superficie de Caldria VI, <strong>${nombre}</strong>.</p>
+    <p>El aire es espeso, cargado de ozono y polvo ferroso. Cada inhalación raspa como si respiraras cenizas.</p>
+    <p>Colinas de escoria y torres oxidadas emergen entre la bruma. La instalación se alza ante ti como una reliquia dormida: gótica, monumental, herida por el tiempo y quizás por algo más.</p>
+    <p>Más allá de esas puertas te esperan secretos olvidados… y el juicio de tu fe.</p>
     <button onclick="cargarSalaArchivo()">Entrar a la instalación</button>
   `;
 }
-
 
 
 // Iniciar juego
@@ -80,16 +103,11 @@ mostrarIntroduccion();
 //---------------------------------------------------
 
 function cargarSalaArchivo() {
-  const salaImagen = 'img/sala_archivo.jpg';
-  const informes = [
-    "[Informe A] El experimento 112 muestra inestabilidad genética, pero la fórmula parece contener patrones clave en el ADN. El número 3 aparece repetido.",
-    "[Informe B] Los cultistas dejaron grabado en la pared el símbolo 'XIV'. Aparentemente reverencian ese número como sagrado.",
-    "[Informe C] Los sistemas indican que el último acceso exitoso utilizó el código 3-14-9."
-  ];
+  const salaImagen = 'img/room_Archivum.png';
 
   const contenedor = document.getElementById("juego");
   contenedor.innerHTML = `
-    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
     <div id="texto-informes" style="display: flex; gap: 1em; margin-top: 1em;">
       <div id="botones-informes" style="flex: 3; display: flex; flex-direction: column; gap: 0.5em;">
         <button onclick="mostrarInforme(0)">Leer Informe A</button>
@@ -100,7 +118,7 @@ function cargarSalaArchivo() {
     </div>
     <div id="input-codigo" style="margin-top: 1em;">
       <label for="codigo">Código de acceso:</label>
-      <input type="text" id="codigo" placeholder="_ _ _">
+      <input type="text" id="codigo" placeholder="">
       <button onclick="verificarCodigoArchivo()">Validar</button>
     </div>
   `;
@@ -109,14 +127,29 @@ function cargarSalaArchivo() {
 }
 
 function mostrarInforme(index) {
-  const informeTexto = window.informesArchivo[index];
+  let informeTexto = "";
+
+  switch (index) {
+    case 0:
+      informeTexto = textos.informeA;
+      break;
+    case 1:
+      informeTexto = textos.informeB;
+      break;
+    case 2:
+      informeTexto = textos.informeC;
+      break;
+    default:
+      informeTexto = "Informe no disponible.";
+  }
+
   const contenedorInforme = document.getElementById("informe-mostrado");
-  contenedorInforme.textContent = informeTexto;
+  contenedorInforme.innerHTML  = informeTexto.replace(/\n/g, "<br>");
 }
 
 function verificarCodigoArchivo() {
   const codigo = document.getElementById("codigo").value.trim();
-  if (codigo === "3-14-9") {
+  if (codigo === "5284493177") {
     alert("Código correcto. Avanzando a la siguiente sala...");
     mostrarCapillaCombate();
   } else {
@@ -129,7 +162,7 @@ function verificarCodigoArchivo() {
 // Fragmento JavaScript actualizado para la Capilla del Silencio - Encuentro con herejes
 
 function mostrarCapillaCombate() {
-  const salaImagen = 'img/capilla_combate.jpg';
+  const salaImagen = 'img/room_capilla_herejes.png';
   const descripcionSala = `
     <p>Ingresas a la Capilla del Silencio. La atmósfera es opresiva. Columnas góticas se alzan en ruinas y símbolos del Caos profanan los muros. Aquí, entre las sombras, patrullan tres herejes, corrompidos por su depravada fe. Debes actuar con sabiduría y decisión.</p>
   `;
@@ -154,7 +187,7 @@ function mostrarCapillaCombate() {
 
   const contenedor = document.getElementById("juego");
   contenedor.innerHTML = `
-    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
     <div id="descripcion-capilla">${descripcionSala}</div>
     <div id="interaccion-capilla" style="display: flex; gap: 1rem;">
       <div style="width: 30%; display: flex; flex-direction: column; gap: 1rem;">
