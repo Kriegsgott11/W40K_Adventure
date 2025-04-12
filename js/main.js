@@ -36,11 +36,7 @@ function mostrarIntroduccion() {
 
   // Crear el form desde el principio
   const form = document.createElement("div");
-  form.innerHTML = `
-    <p>Introduce tu nombre, acólito:</p>
-    <input type="text" id="nombreInput" placeholder="Nombre del acólito">
-    <button onclick="iniciarMision()">Comenzar misión</button>
-  `;
+  $(form).load("inputs/player_name.html");
 
   // Insertar en la terminal
   contenedorTerminal.innerHTML = "";
