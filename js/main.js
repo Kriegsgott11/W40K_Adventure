@@ -82,16 +82,25 @@ function cargarSalaDesembarco() {
 
   const nombre = sessionStorage.getItem("acolito");
 
-  contenedorTerminal.innerHTML = `
-    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
-    <p>Has descendido sobre la superficie de Caldria VI, <strong>${nombre}</strong>.</p>
-    <p>El aire es espeso, cargado de ozono y polvo ferroso. Cada inhalación raspa como si respiraras cenizas.</p>
-    <p>Colinas de escoria y torres oxidadas emergen entre la bruma. La instalación se alza ante ti como una reliquia dormida: gótica, monumental, herida por el tiempo y quizás por algo más.</p>
-    <p>Más allá de esas puertas te esperan secretos olvidados… y el juicio de tu fe.</p>
-    <button onclick="cargarSalaArchivo()">Entrar a la instalación</button>
-  `;
+  //$(contenedorTerminal).load(".html");
+
+  const data = {
+    salaImagen: salaImagen,
+    nombre: nombre
+  };
+
+  // Load the external template
+  cargarTemplate(data, "rooms/descent.html", contenedorTerminal);
 }
 
+function cargarTemplate(data, template, container)
+{
+  $.get(template, function(templateSource) {
+    const template = Handlebars.compile(templateSource);
+    const html = template(data);
+    $(container).html(html);
+  });
+}
 
 // Iniciar juego
 mostrarIntroduccion();
