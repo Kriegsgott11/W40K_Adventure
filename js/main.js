@@ -164,24 +164,24 @@ function verificarCodigoArchivo() {
 function mostrarCapillaCombate() {
   const salaImagen = 'img/room_capilla_herejes.png';
   const descripcionSala = `
-    <p>Ingresas a la Capilla del Silencio. La atmósfera es opresiva. Columnas góticas se alzan en ruinas y símbolos del Caos profanan los muros. Aquí, entre las sombras, patrullan tres herejes, corrompidos por su depravada fe. Debes actuar con sabiduría y decisión.</p>
+    <p>${textos.IntroCapilla.replace(/\n/g, "<br>")}</p>
   `;
 
   const opciones = [
     {
-      id: "purgar",
-      texto: "Enfrentarlos y purgarlos",
-      resultado: "Empuñas tu arma y sorprendes a los herejes con fuego y fe. La batalla es brutal, pero sales victorioso. La capilla queda momentáneamente limpia de corrupción."
+      id: "1",
+      texto: "Purga a los herejes"
+      //resultado: textos.CombateA //"Empuñas tu arma y sorprendes a los herejes con fuego y fe. La batalla es brutal, pero sales victorioso. La capilla queda momentáneamente limpia de corrupción."
     },
     {
-      id: "ignorar",
-      texto: "Esconderte y evitarlos",
-      resultado: "Decides esquivarlos y pasar desapercibido. Aunque logras seguir avanzando, una sensación de culpa pesa sobre tus hombros."
+      id: "2",
+      texto: "Actua con sigilo"
+      //resultado: textos.CombateB //"Decides esquivarlos y pasar desapercibido. Aunque logras seguir avanzando, una sensación de culpa pesa sobre tus hombros."
     },
     {
-      id: "enganar",
-      texto: "Intentar engañarlos",
-      resultado: "Finges ser uno de ellos, pero tu mentira se desvanece rápidamente. El combate es inevitable y terminas herido, aunque logras sobrevivir."
+      id: "3",
+      texto: "Engaña a tus enemigos"
+      //resultado: textos.CombateC //"Finges ser uno de ellos, pero tu mentira se desvanece rápidamente. El combate es inevitable y terminas herido, aunque logras sobrevivir."
     }
   ];
 
@@ -206,16 +206,26 @@ function mostrarCapillaCombate() {
 }
 
 function seleccionarOpcionCombate(id) {
-  const resultados = {
-    purgar: "Empuñas tu arma y sorprendes a los herejes con fuego y fe. La batalla es brutal, pero sales victorioso. La capilla queda momentáneamente limpia de corrupción.",
-    ignorar: "Decides esquivarlos y pasar desapercibido. Aunque logras seguir avanzando, una sensación de culpa pesa sobre tus hombros.",
-    enganar: "Finges ser uno de ellos, pero tu mentira se desvanece rápidamente. El combate es inevitable y terminas herido, aunque logras sobrevivir."
-  };
+  let resultado = "";
 
-  document.getElementById("resultado-combate").innerHTML = `<p>${resultados[id]}</p>`;
+  switch (id) {
+    case "1":
+      resultado = textos.CombateA;
+      break;
+    case "2":
+      resultado = textos.CombateB;
+      break;
+    case "3":
+      resultado = textos.CombateC;
+      break;
+    default:
+      resultado = "Informe no disponible.";
+  }
+
+  document.getElementById("resultado-combate").innerHTML = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
   // Desactivar todos los botones después de elegir
-  ["purgar", "ignorar", "enganar"].forEach(op => {
+  ["1", "2", "3"].forEach(op => {
     const btn = document.getElementById(op);
     btn.disabled = true;
     btn.style.opacity = 0.5;

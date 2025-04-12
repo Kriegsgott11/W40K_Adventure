@@ -72,6 +72,52 @@ Ya la dejé registrada en tu terminal de notas codificada en binario.
 Si bloqueás la puerta otra vez, serás transferido a mantenimiento de servocráneos defectuosos.
 
 ++ Finaliza la comunicación ++
-      `
+      `,
+
+      IntroCapilla: `
+Ingresas a la Capilla del Silencio. El aire es denso, saturado de polvo y una quietud antinatural. Columnas góticas, agrietadas por el tiempo, se alzan como testigos moribundos de una fe profanada.
+A la tenue luz filtrada entre vitrales rotos, distingues tres figuras moviéndose entre las sombras. Son herejes: cubiertos con harapos inmundos, placas oxidadas con pinchos, y su carne marcada por símbolos que ofenden la razón.
+Empuñan armas automáticas deterioradas, pero aún letales. No son meros fanáticos: son guardianes corrompidos de este lugar sacrílego.
+Has cruzado el umbral de la herejía. Ahora, tu juicio debe ser certero, y tu fe, inquebrantable.
+            `,
+
+      CombateA: `
+Sin dudarlo, cargas contra los herejes mientras murmuras una letanía al Emperador entre dientes. Cada paso resuena como un eco de justicia en la nave profanada.
+El primer disparo de tu pistola bolter retumba como un trueno sagrado, y cuando impacta, el pecho de un hereje explota en una nube de hueso y sangre.
+El segundo enemigo levanta su arma, pero no tiene tiempo de disparar: una segunda ronda lo alcanza en el abdomen, y el rugido explosivo del proyectil lo parte en dos.
+El último de ellos carga hacia ti con un grito gutural.
+Al encender la espada sierra, no escuchas un motor… escuchas el juicio divino dispuesto a desgarrar la carne impura.
+Con un golpe descendente, la hoja dentada penetra su armadura improvisada. El motor sagrado de la espada escupe metal y vísceras mientras desgarra su torso de lado a lado.
+El cuerpo cae con un crujido sordo. La capilla queda en silencio, cubierta por la sangre de los impuros.
+Te mantienes firme, jadeando, cubierto de restos de tus enemigos.
+Has purgado este lugar con fuego y acero.
+El Emperador ha sido testigo.
+            `,
+            
+      CombateB: `
+Pegado a las sombras, reduces tu respiración.
+Tus pasos, silenciosos como una letanía no pronunciada, te guían por los flancos de la nave. Te ocultas tras columnas derrumbadas y restos de estatuas del Emperador partidas por la herejía.
+Los herejes patrullan con torpeza, intercambiando palabras en una lengua corrupta. No te detectan. No disparan. No mueren.
+Avanzas. Paso a paso, metro a metro, hasta dejar atrás el hedor del Caos.
+Llegas al otro extremo de la capilla, ileso… pero no indemne.
+El Emperador vio tu decisión.
+Y en Su juicio, no hay lugar para la cobardía.
+            `,
+
+      CombateC: `
+Cubierto con harapos saqueados de un cadáver, ocultas tu rostro con una capucha ennegrecida por el hollín. Atas un símbolo hereje al pecho con repugnancia contenida.
+Caminas entre ellos con paso firme, imitando su arrastrar corrompido. Uno te observa… luego otro. Intercambian miradas.
+Te detienen. Uno de ellos alza el arma y grita algo en una lengua blasfema que no comprendes.
+El momento se quiebra en un estallido de fuego y acero.
+Tu pistola bolter ruge al instante. El disparo impacta en el rostro del primer hereje, que explota en una nube de sangre antes de poder gritar.
+El segundo cae con el torso destrozado por una ráfaga a quemarropa. Su cuerpo se arrastra unos centímetros antes de quedar inmóvil.
+El tercero salta sobre ti con una daga oxidada.
+Activas tu espada sierra, que despierta con un bramido mecánico. El hereje logra clavar su arma en tu costado antes de que respondas, arrancándote un gemido de dolor.
+Con furia, clavas la espada en su estómago y la haces rugir. Los dientes dentados desgarran carne y hueso hasta dividirlo en dos mitades humeantes.
+Silencio.
+Solo el goteo de tu sangre sobre las losas profanadas.
+Permaneces en pie, tambaleante, cubierto de sangre ajena… y propia.
+El Emperador vio tu astucia. Y te dejó vivir… pero no sin cicatrices.
+            `
   };
   
