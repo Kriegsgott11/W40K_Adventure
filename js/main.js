@@ -207,48 +207,34 @@ function seleccionarOpcionCombate(index) {
 //----------------------------------------------------------
 
 function mostrarCapillaSimbolos() {
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div class="descripcion-superior">
-      <h2>Altar de los Tres Signos</h2>
-      <p>
-        En el corazón de la Capilla del Silencio, un altar profanado espera ser purificado. Tres ranuras están talladas en piedra negra.
-        Sobre los bordes, inscripciones binarizadas emiten destellos apagados. El aire huele a incienso mecánico y unguento sagrado.
-        Solo un símbolo restaurará la conexión con la verdad.
-      </p>
-    </div>
-    <div class="contenedor-opciones">
-      <div class="opciones-botones">
-        <button onclick="seleccionarSimbolo('aquila')">Aquila Imperialis</button>
-        <button onclick="seleccionarSimbolo('rosarius')">Rosarius del Inquisidor</button>
-        <button onclick="seleccionarSimbolo('mechanicus')">Símbolo del Adeptus Mechanicus</button>
-      </div>
-      <div class="resultado-texto" id="resultadoSimbolo">
-        <p>Selecciona un símbolo para colocarlo en el altar.</p>
-      </div>
-    </div>
-    <div id="botonContinuarSimbolo" style="display: none; text-align: center; margin-top: 20px;">
-      <button onclick="mostrarLaboratorioGenetico()">Continuar</button>
-    </div>
-  `;
+
+  const salaImagen = 'img/room_capilla_puzzle.png';
+
+  const data = {
+    salaImagen: salaImagen
+  };
+
+  // Load the external template
+  cargarTemplate(data, "rooms/oratorium_puzzle.html", contenedorTerminal);
+
 }
 
-function seleccionarSimbolo(opcion) {
+function seleccionarSimbolo(index) {
   const resultado = document.getElementById("resultadoSimbolo");
   const continuarBtn = document.getElementById("botonContinuarSimbolo");
   let texto = "";
 
-  switch(opcion) {
-    case 'aquila':
-      texto = "Colocas el Aquila Imperialis. Un silencio se extiende, pero nada sucede. El altar permanece inerte.";
+  switch(index) {
+    case 0:
+      texto = "Colocas el emblema del Adeptus Astartes. Un silencio se extiende, pero nada sucede. El altar permanece inerte.";
       continuarBtn.style.display = "none";
       break;
-    case 'rosarius':
-      texto = "Insertas el Rosarius del Inquisidor. Una chispa ilumina el altar, pero se desvanece. Este no es el símbolo adecuado.";
+    case 1:
+      texto = "Insertas el emblema de la santa Inquisición. Una chispa ilumina el altar, pero se desvanece. Este no es el símbolo adecuado.";
       continuarBtn.style.display = "none";
       break;
-    case 'mechanicus':
-      texto = "El Símbolo del Adeptus Mechanicus encaja perfectamente. Ruedas dentadas comienzan a girar. Se escucha un zumbido de aprobación mientras el altar se ilumina.";
+    case 2:
+      texto = "El emblema del Adeptus Mechanicus encaja perfectamente. Ruedas dentadas comienzan a girar. Se escucha un zumbido de aprobación mientras el altar se ilumina.";
       continuarBtn.style.display = "block";
       break;
   }

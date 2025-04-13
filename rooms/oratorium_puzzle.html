@@ -1,0 +1,22 @@
+<div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
+<div class="descripcion-superior">
+    <h2>Altar de los Tres Signos</h2>
+    <p>
+      En el corazón de la Capilla del Silencio, un altar profanado espera ser purificado. Tres ranuras están talladas en piedra negra.
+      Sobre los bordes, inscripciones binarizadas emiten destellos apagados. El aire huele a incienso mecánico y unguento sagrado.
+      Solo un símbolo restaurará la conexión con la verdad.
+    </p>
+  </div>
+  <div class="contenedor-opciones">
+    <div class="opciones-botones">
+      <button onclick="seleccionarSimbolo(0)">Adeptus Astartes</button>
+      <button onclick="seleccionarSimbolo(1)">Rosarius del Inquisidor</button>
+      <button onclick="seleccionarSimbolo(2)">Adeptus Mechanicus</button>
+    </div>
+    <div class="resultado-texto" id="resultadoSimbolo">
+      <p>Selecciona un símbolo para colocarlo en el altar.</p>
+    </div>
+  </div>
+  <div id="botonContinuarSimbolo" style="display: none; text-align: center; margin-top: 20px;">
+    <button onclick="mostrarLaboratorioGenetico()">Continuar</button>
+</div>
