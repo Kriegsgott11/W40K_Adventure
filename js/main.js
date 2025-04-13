@@ -154,73 +154,52 @@ function verificarCodigoArchivo() {
 
 function mostrarCapillaCombate() {
   const salaImagen = 'img/room_capilla_herejes.png';
-  const descripcionSala = `
-    <p>${textos.IntroCapilla.replace(/\n/g, "<br>")}</p>
-  `;
+  const salaText = `<p>${textos.IntroCapilla.replace(/\n/g, "<br>")}</p>`;
 
-  const opciones = [
-    {
-      id: "1",
-      texto: "Purga a los herejes"
-      //resultado: textos.CombateA //"Empuñas tu arma y sorprendes a los herejes con fuego y fe. La batalla es brutal, pero sales victorioso. La capilla queda momentáneamente limpia de corrupción."
-    },
-    {
-      id: "2",
-      texto: "Actua con sigilo"
-      //resultado: textos.CombateB //"Decides esquivarlos y pasar desapercibido. Aunque logras seguir avanzando, una sensación de culpa pesa sobre tus hombros."
-    },
-    {
-      id: "3",
-      texto: "Engaña a tus enemigos"
-      //resultado: textos.CombateC //"Finges ser uno de ellos, pero tu mentira se desvanece rápidamente. El combate es inevitable y terminas herido, aunque logras sobrevivir."
-    }
-  ];
+  const data = {
+    salaImagen: salaImagen,
+    salaText: salaText
+  };
 
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
-    <div id="descripcion-capilla">${descripcionSala}</div>
-    <div id="interaccion-capilla" style="display: flex; gap: 1rem;">
-      <div style="width: 30%; display: flex; flex-direction: column; gap: 1rem;">
-        ${opciones.map(op => `
-          <button id="${op.id}" onclick="seleccionarOpcionCombate('${op.id}')">${op.texto}</button>
-        `).join('')}
-      </div>
-      <div id="resultado-combate" style="width: 70%; border: 1px solid #555; padding: 1rem; background-color: #111; color: white; min-height: 150px;">
-        <p>Selecciona una opción para ver el resultado...</p>
-      </div>
-    </div>
-    <div style="margin-top: 2rem; text-align: center;">
-      <button id="btn-continuar-combate" style="display:none;" onclick="mostrarCapillaSimbolos()">Continuar</button>
-    </div>
-  `;
+  // Load the external template
+  cargarTemplate(data, "rooms/oratorium_combat.html", contenedorTerminal);
+
+  //Hacer Preguntar a Luquitas porque usa esto aca
+  //const contenedor = document.getElementById("juego");
+
 }
 
-function seleccionarOpcionCombate(id) {
+function seleccionarOpcionCombate(index) {
   let resultado = "";
 
-  switch (id) {
-    case "1":
+  switch (index) {
+    case 0:
       resultado = textos.CombateA;
       break;
-    case "2":
+    case 1:
       resultado = textos.CombateB;
       break;
-    case "3":
+    case 2:
       resultado = textos.CombateC;
       break;
     default:
       resultado = "Informe no disponible.";
   }
 
-  document.getElementById("resultado-combate").innerHTML = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
+  const contenedorResult = document.getElementById("resultado-combate");
+  contenedorResult.innerHTML  = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
+  //document.getElementById("resultado-combate").innerHTML = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
   // Desactivar todos los botones después de elegir
-  ["1", "2", "3"].forEach(op => {
-    const btn = document.getElementById(op);
-    btn.disabled = true;
-    btn.style.opacity = 0.5;
-  });
+  const btn0 = document.getElementById("0");
+  btn0.disabled = true;
+  btn0.style.opacity = 0.5;
+  const btn1 = document.getElementById("1");
+  btn1.disabled = true;
+  btn1.style.opacity = 0.5;
+  const btn2 = document.getElementById("2");
+  btn2.disabled = true;
+  btn2.style.opacity = 0.5;
 
   document.getElementById("btn-continuar-combate").style.display = "inline-block";
 }
