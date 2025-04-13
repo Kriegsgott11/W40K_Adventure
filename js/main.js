@@ -245,6 +245,15 @@ function seleccionarSimbolo(index) {
 
 function mostrarLaboratorioGenetico() {
   const salaImagen = 'img/room_laboratorium.png';
+
+  const data = {
+    salaImagen: salaImagen
+  };
+
+  // Load the external template
+  cargarTemplate(data, "rooms/lab_biologicus.html", contenedorTerminal);
+
+  /*
   const descripcion = `
     <p>Te adentras en el <strong>Laboratorium Biologicus</strong>, una cámara revestida de acero y cobre, donde tubos con fluidos burbujean suavemente.</p>
     <p>Luces parpadeantes iluminan bancos de trabajo abandonados, documentos mojados por reactivos, y cuerpos parcialmente diseccionados bajo vitrinas de stasis.</p>
@@ -280,11 +289,32 @@ function mostrarLaboratorioGenetico() {
 
   // Guardar registros en global para acceso posterior
   window.registrosLaboratorio = registros;
+  */
 }
 
-function mostrarTextoLaboratorio(clave) {
-  const texto = window.registrosLaboratorio[clave];
-  document.getElementById("textoLaboratorio").innerHTML = `<p>${texto}</p>`;
+function mostrarTextoLaboratorio(index) {
+
+  let informeTexto = "";
+
+  switch (index) {
+    case 0:
+      informeTexto = textos.LabInfoA;
+      break;
+    case 1:
+      informeTexto = textos.LabInfoB;
+      break;
+    case 2:
+      informeTexto = textos.LabInfoC;
+      break;
+    default:
+      informeTexto = "Informe no disponible.";
+  }
+
+  const contenedorInforme = document.getElementById("textoLaboratorio");
+  contenedorInforme.innerHTML  = `<p>${informeTexto.replace(/\n/g, "<br>")}</p>`;
+
+  //const texto = window.registrosLaboratorio[clave];
+  //document.getElementById("textoLaboratorio").innerHTML = `<p>${texto}</p>`;
 }
 
 //-----------------------------------------

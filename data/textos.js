@@ -118,6 +118,17 @@ Silencio.
 Solo el goteo de tu sangre sobre las losas profanadas.
 Permaneces en pie, tambaleante, cubierto de sangre ajena… y propia.
 El Emperador vio tu astucia. Y te dejó vivir… pero no sin cicatrices.
-            `
-  };
+            `,
+
+      LabInfoA: `
+Informe: Se detectaron múltiples mutaciones en los sujetos, en especial en la glándula progenoide. Esto podría indicar manipulación por entidades del Caos.
+`,
+      LabInfoB: `
+Informe: Señales claras de infiltración de un culto xenos. Se encontraron restos de ADN no humano en los recipientes de cultivo.
+      `,
+      LabInfoC: `
+Informe: El Magos Biologis intentó fusionar material genético de varias razas. El experimento fracasó catastróficamente y resultó en la pérdida de toda una escuadra de Skitarii.
+      `
+  
+};
   
