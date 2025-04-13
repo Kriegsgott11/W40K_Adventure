@@ -1,6 +1,7 @@
 // Referencias a los contenedores
 const imagenSala = document.getElementById("sala-imagen");
 const contenedorTerminal = document.getElementById("contenedor-terminal");
+const contenedorJuego = document.getElementById("juego");
 
 // Efecto de tipeo
 function typeText(text, container, callback, speed = 30) {
@@ -90,7 +91,7 @@ function cargarSalaDesembarco() {
   };
 
   // Load the external template
-  cargarTemplate(data, "rooms/descent.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/descent.html", contenedorJuego);
 }
 
 function cargarTemplate(data, template, container)
@@ -114,7 +115,7 @@ function cargarSalaArchivo() {
     salaImagen: salaImagen
   };
 
-  cargarTemplate(data, "rooms/archivum.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/archivum.html", contenedorJuego);
 }
 
 function mostrarInforme(index) {
@@ -134,7 +135,7 @@ function mostrarInforme(index) {
       informeTexto = "Informe no disponible.";
   }
 
-  const contenedorInforme = document.getElementById("informe-mostrado");
+  const contenedorInforme = document.getElementById("resultado-sala");
   contenedorInforme.innerHTML  = informeTexto.replace(/\n/g, "<br>");
 }
 
@@ -154,7 +155,7 @@ function verificarCodigoArchivo() {
 
 function mostrarCapillaCombate() {
   const salaImagen = 'img/room_capilla_herejes.png';
-  const salaText = `<p>${textos.IntroCapilla.replace(/\n/g, "<br>")}</p>`;
+  const salaText = textos.IntroCapilla;
 
   const data = {
     salaImagen: salaImagen,
@@ -162,7 +163,7 @@ function mostrarCapillaCombate() {
   };
 
   // Load the external template
-  cargarTemplate(data, "rooms/oratorium_combat.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/oratorium_combat.html", contenedorJuego);
 
   //Hacer Preguntar a Luquitas porque usa esto aca
   //const contenedor = document.getElementById("juego");
@@ -186,7 +187,7 @@ function seleccionarOpcionCombate(index) {
       resultado = "Informe no disponible.";
   }
 
-  const contenedorResult = document.getElementById("resultado-combate");
+  const contenedorResult = document.getElementById("resultado-sala");
   contenedorResult.innerHTML  = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
   //document.getElementById("resultado-combate").innerHTML = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
@@ -215,13 +216,13 @@ function mostrarCapillaSimbolos() {
   };
 
   // Load the external template
-  cargarTemplate(data, "rooms/oratorium_puzzle.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/oratorium_puzzle.html", contenedorJuego);
 
 }
 
 function seleccionarSimbolo(index) {
-  const resultado = document.getElementById("resultadoSimbolo");
-  const continuarBtn = document.getElementById("botonContinuarSimbolo");
+  const resultado = document.getElementById("resultado-sala");
+  const continuarBtn = document.getElementById("btn-continuar-puzzle");
   let texto = "";
 
   switch(index) {
@@ -251,7 +252,7 @@ function mostrarLaboratorioGenetico() {
   };
 
   // Load the external template
-  cargarTemplate(data, "rooms/lab_biologicus.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/lab_biologicus.html", contenedorJuego);
 
 }
 
@@ -273,7 +274,7 @@ function mostrarTextoLaboratorio(index) {
       informeTexto = "Informe no disponible.";
   }
 
-  const contenedorInforme = document.getElementById("textoLaboratorio");
+  const contenedorInforme = document.getElementById("resultado-sala");
   contenedorInforme.innerHTML  = `<p>${informeTexto.replace(/\n/g, "<br>")}</p>`;
 
 }
@@ -288,7 +289,7 @@ function mostrarCriptaHereje() {
   };
 
   // Load the external template
-  cargarTemplate(data, "rooms/crypta_haeretici.html", contenedorTerminal);
+  cargarTemplate(data, "rooms/crypta_haeretici.html", contenedorJuego);
 
   // Inicializa variables para seleccionar
   window.combinacionViales = [];
@@ -330,6 +331,15 @@ function probarCombinacion() {
 
 function mostrarSalaFinal() {
   const salaImagen = 'img/room_camarasellada.png';
+
+  const data = {
+    salaImagen: salaImagen
+  };
+
+  // Load the external template
+  cargarTemplate(data, "rooms/claustrum_clausum.html", contenedorJuego);
+
+  /*
   const descripcion = `
     El acólito ingresa a la cámara sellada. El aire es denso y cargado de energía disforme.
     Un círculo de cultistas entona cánticos blasfemos mientras, en el centro, un psíquico mutado tiembla, al borde de ser poseído.
@@ -378,7 +388,7 @@ function mostrarSalaFinal() {
       <button onclick="mostrarTextoFinal()">Continuar</button>
     </div>
   `;
-
+*/
   window._decisionesFinal = decisiones;
 }
 
@@ -400,7 +410,7 @@ function mostrarResultadoFinal(index) {
       resultado = "Informe no disponible.";
   }
 
-  const contenedorInforme = document.getElementById("resultado-final");
+  const contenedorInforme = document.getElementById("resultado-sala");
   contenedorInforme.innerHTML  = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
   const botones = document.querySelectorAll(".btn-opcion");

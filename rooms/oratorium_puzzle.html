@@ -1,5 +1,5 @@
-<div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
-<div class="descripcion-superior">
+<div class="contenedor-superior">
+  <div id="texto-sala">
     <h2>Altar de los Tres Signos</h2>
     <p>
       En el corazón de la Capilla del Silencio, un altar profanado espera ser purificado. Tres ranuras están talladas en piedra negra.
@@ -7,16 +7,22 @@
       Solo un símbolo restaurará la conexión con la verdad.
     </p>
   </div>
-  <div class="contenedor-opciones">
-    <div class="opciones-botones">
-      <button onclick="seleccionarSimbolo(0)">Adeptus Astartes</button>
-      <button onclick="seleccionarSimbolo(1)">Rosarius del Inquisidor</button>
-      <button onclick="seleccionarSimbolo(2)">Adeptus Mechanicus</button>
-    </div>
-    <div class="resultado-texto" id="resultadoSimbolo">
-      <p>Selecciona un símbolo para colocarlo en el altar.</p>
-    </div>
+  <div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
+</div>
+
+<div class="contenedor-inferior">
+  <div id="opciones-sala">
+    <button onclick="seleccionarSimbolo(0)">Adeptus Astartes</button>
+    <button onclick="seleccionarSimbolo(1)">Rosarius del Inquisidor</button>
+    <button onclick="seleccionarSimbolo(2)">Adeptus Mechanicus</button>
   </div>
-  <div id="botonContinuarSimbolo" style="display: none; text-align: center; margin-top: 20px;">
-    <button onclick="mostrarLaboratorioGenetico()">Continuar</button>
+  <div id="resultado-sala">
+    <p>Selecciona un símbolo para colocarlo en el altar.</p>
+  </div>
+</div>
+
+<div class="boton-continuar">
+  <div style="margin-top: 2rem; text-align: center;">
+      <button id="btn-continuar-puzzle" style="display:none;" onclick="mostrarLaboratorioGenetico()">Continuar</button>
+  </div>
 </div>

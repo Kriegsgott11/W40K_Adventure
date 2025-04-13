@@ -1,19 +1,23 @@
-<div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
-<div id="descripcion-laboratorio">
-    <p>Te adentras en el <strong>Laboratorium Biologicus</strong>, una cámara revestida de acero y cobre, donde tubos con fluidos burbujean suavemente.</p>
-    <p>Luces parpadeantes iluminan bancos de trabajo abandonados, documentos mojados por reactivos, y cuerpos parcialmente diseccionados bajo vitrinas de stasis.</p>
-    <p>En una consola central hay registros genéticos protegidos por protocolos de acceso. Tres secciones están disponibles para su lectura...</p>
+<div class="contenedor-superior">
+    <div id="texto-sala">
+        <p>Te adentras en el <strong>Laboratorium Biologicus</strong>, una cámara revestida de acero y cobre, donde tubos con fluidos burbujean suavemente.</p>
+        <p>Luces parpadeantes iluminan bancos de trabajo abandonados, documentos mojados por reactivos, y cuerpos parcialmente diseccionados bajo vitrinas de stasis.</p>
+        <p>En una consola central hay registros genéticos protegidos por protocolos de acceso. Tres secciones están disponibles para su lectura...</p>
+    </div>
+    <div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
 </div>
-<div class="contenedor-sala">
-    <div class="botones-sala">
+
+<div class="contenedor-inferior">
+    <div id="opciones-sala">
         <button onclick="mostrarTextoLaboratorio(0)">Informe 1</button>
         <button onclick="mostrarTextoLaboratorio(1)">Informe 2</button>
         <button onclick="mostrarTextoLaboratorio(2)">Informe 3</button>
     </div>
-    <div class="texto-sala" id="textoLaboratorio">
+    <div id="resultado-sala">
         <p>Selecciona un informe para visualizar su contenido...</p>
     </div>
 </div>
-<div class="continuar">
-    <button onclick="mostrarCriptaHereje()">Continuar</button>
-</div>
+
+<div class="boton-continuar">
+        <button onclick="mostrarCriptaHereje()">Continuar</button>
+  </div>
