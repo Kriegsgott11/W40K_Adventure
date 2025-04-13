@@ -1,0 +1,17 @@
+<div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
+<div class="descripcion-sala">
+    El acólito ingresa a la cámara sellada. El aire es denso y cargado de energía disforme.
+    Un círculo de cultistas entona cánticos blasfemos mientras, en el centro, un psíquico mutado tiembla, al borde de ser poseído.
+    Una voz en su cabeza —¿el Emperador...?— le susurra qué hacer.
+</div>
+<div class="contenedor-sala">
+    <div class="botones-sala">
+        <button class="btn-opcion" onclick="mostrarResultadoFinal(0)">Rescata al psíquico</button>
+        <button class="btn-opcion" onclick="mostrarResultadoFinal(1)">Purgar la herejía con fuego sagrado</button>
+        <button class="btn-opcion" onclick="mostrarResultadoFinal(2)">Escuchar la voz del Emperador</button>
+    </div>
+    <div id="resultado-final" class="texto-sala"></div>
+</div>
+<div id="boton-final" style="display: none; text-align: center; margin-top: 20px;">
+    <button onclick="mostrarTextoFinal()">Continuar</button>
+</div>

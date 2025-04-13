@@ -128,6 +128,23 @@ Informe: Señales claras de infiltración de un culto xenos. Se encontraron rest
       `,
       LabInfoC: `
 Informe: El Magos Biologis intentó fusionar material genético de varias razas. El experimento fracasó catastróficamente y resultó en la pérdida de toda una escuadra de Skitarii.
+      `,
+
+      FinalCamaraSelladaA: `
+El acólito interrumpe el ritual e intenta liberar al psíquico del influjo del Caos.
+Tras un sangriento combate logra romper el círculo, pero el psíquico huye y más tarde causa una masacre.
+La Inquisición castiga al acólito por su imprudencia.
+        `,
+      FinalCamaraSelladaB: `
+Sin dudarlo, el acólito activa granadas de fusión y lanza proyectiles incendiarios.
+El ritual se interrumpe abruptamente, y los cultistas mueren entre gritos.
+El psíquico es incinerado antes de que la entidad pueda tomar control.
+El Emperador estará complacido.
+        `,
+      FinalCamaraSelladaC: `
+Convencido de que el Emperador le habla, el acólito se arrodilla y acepta su "guía".
+La entidad demoníaca penetra su alma, y en segundos ya no queda nada humano.
+El acólito se convierte en un nuevo heraldo de la disformidad.
       `
   
 };

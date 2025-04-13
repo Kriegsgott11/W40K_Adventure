@@ -282,38 +282,17 @@ function mostrarTextoLaboratorio(index) {
 
 function mostrarCriptaHereje() {
   const salaImagen = 'img/cripta_hereje.jpg';
-  const descripcion = `
-    <p>Desciendes por una espiral de escaleras antiguas hasta llegar a la <strong>Cripta del Hereje</strong>, un santuario profanado donde la corrupción del Caos ha impregnado cada rincón.</p>
-    <p>En el centro de la sala, una mesa de piedra sostiene varios <strong>viales de sustancias</strong> que aún burbujean débilmente. Un mecanismo arcano parece necesitar una combinación específica para activarse.</p>
-    <p>Debes elegir tres viales. Una combinación correcta abrirá el camino, una incorrecta... podría tener consecuencias.</p>
-  `;
 
-  const opciones = ['Rojo', 'Verde', 'Azul'];
+  const data = {
+    salaImagen: salaImagen
+  };
 
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
-    <div id="descripcion-cripta">
-      ${descripcion}
-    </div>
-    <div class="contenedor-sala">
-      <div class="botones-sala">
-        <p>Selecciona 3 viales:</p>
-        ${opciones.map(
-          color => `<button onclick="seleccionarVial('${color}')">${color}</button>`
-        ).join('')}
-        <button onclick="probarCombinacion()">Probar combinación</button>
-      </div>
-      <div class="texto-sala" id="textoCripta">
-        <p>Combinación actual: <span id="combinacionViales">[ ]</span></p>
-        <div id="resultadoCombinacion"></div>
-      </div>
-    </div>
-  `;
+  // Load the external template
+  cargarTemplate(data, "rooms/crypta_haeretici.html", contenedorTerminal);
 
   // Inicializa variables para seleccionar
   window.combinacionViales = [];
-  window.combinacionCorrecta = ['Rojo', 'Verde', 'Azul']; // puedes cambiar esto
+  window.combinacionCorrecta = ['rojo', 'verde', 'azul']; // puedes cambiar esto
 }
 
 function seleccionarVial(color) {
@@ -404,8 +383,25 @@ function mostrarSalaFinal() {
 }
 
 function mostrarResultadoFinal(index) {
-  const texto = window._decisionesFinal[index].resultado;
-  document.getElementById("resultado-final").innerHTML = `<p>${texto}</p>`;
+
+  let resultado = "";
+
+  switch (index) {
+    case 0:
+      resultado = textos.FinalCamaraSelladaA;
+      break;
+    case 1:
+      resultado = textos.FinalCamaraSelladaA;
+      break;
+    case 2:
+      resultado = textos.FinalCamaraSelladaA;
+      break;
+    default:
+      resultado = "Informe no disponible.";
+  }
+
+  const contenedorInforme = document.getElementById("resultado-final");
+  contenedorInforme.innerHTML  = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
   const botones = document.querySelectorAll(".btn-opcion");
   botones.forEach(btn => btn.disabled = true);
