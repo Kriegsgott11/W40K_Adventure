@@ -1,0 +1,19 @@
+<div id="sala-imagen" style="background-image: url('${salaImagen}')"></div>
+    <div id="descripcion-cripta">
+        <p>Desciendes por una espiral de escaleras antiguas hasta llegar a la <strong>Cripta del Hereje</strong>, un santuario profanado donde la corrupción del Caos ha impregnado cada rincón.</p>
+        <p>En el centro de la sala, una mesa de piedra sostiene varios <strong>viales de sustancias</strong> que aún burbujean débilmente. Un mecanismo arcano parece necesitar una combinación específica para activarse.</p>
+        <p>Debes elegir tres viales. Una combinación correcta abrirá el camino, una incorrecta... podría tener consecuencias.</p>
+    </div>
+    <div class="contenedor-sala">
+      <div class="botones-sala">
+        <p>Selecciona 3 viales:</p>
+        <button onclick="seleccionarVial('rojo')">Rojo</button>
+        <button onclick="seleccionarVial('verde')">Verde</button>
+        <button onclick="seleccionarVial('azul')">Azul</button>
+        <button onclick="probarCombinacion()">Probar combinación</button>
+      </div>
+      <div class="texto-sala" id="textoCripta">
+        <p>Combinación actual: <span id="combinacionViales">[ ]</span></p>
+        <div id="resultadoCombinacion"></div>
+      </div>
+    </div>

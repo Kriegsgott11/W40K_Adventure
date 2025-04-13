@@ -253,43 +253,6 @@ function mostrarLaboratorioGenetico() {
   // Load the external template
   cargarTemplate(data, "rooms/lab_biologicus.html", contenedorTerminal);
 
-  /*
-  const descripcion = `
-    <p>Te adentras en el <strong>Laboratorium Biologicus</strong>, una cámara revestida de acero y cobre, donde tubos con fluidos burbujean suavemente.</p>
-    <p>Luces parpadeantes iluminan bancos de trabajo abandonados, documentos mojados por reactivos, y cuerpos parcialmente diseccionados bajo vitrinas de stasis.</p>
-    <p>En una consola central hay registros genéticos protegidos por protocolos de acceso. Tres secciones están disponibles para su lectura...</p>
-  `;
-
-  const registros = {
-    'Mutaciones': `Informe: Se detectaron múltiples mutaciones en los sujetos, en especial en la glándula progenoide. Esto podría indicar manipulación por entidades del Caos.`,
-    'Culto Genestealer': `Informe: Señales claras de infiltración de un culto xenos. Se encontraron restos de ADN no humano en los recipientes de cultivo.`,
-    'Experimentos Fusión': `Informe: El Magos Biologis intentó fusionar material genético de varias razas. El experimento fracasó catastróficamente y resultó en la pérdida de toda una escuadra de Skitarii.`
-  };
-
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
-    <div id="descripcion-laboratorio">
-      ${descripcion}
-    </div>
-    <div class="contenedor-sala">
-      <div class="botones-sala">
-        ${Object.keys(registros).map(
-          (clave) => `<button onclick="mostrarTextoLaboratorio('${clave}')">${clave}</button>`
-        ).join('')}
-      </div>
-      <div class="texto-sala" id="textoLaboratorio">
-        <p>Selecciona un informe para visualizar su contenido...</p>
-      </div>
-    </div>
-    <div class="continuar">
-      <button onclick="mostrarCriptaHereje()">Continuar</button>
-    </div>
-  `;
-
-  // Guardar registros en global para acceso posterior
-  window.registrosLaboratorio = registros;
-  */
 }
 
 function mostrarTextoLaboratorio(index) {
@@ -313,8 +276,6 @@ function mostrarTextoLaboratorio(index) {
   const contenedorInforme = document.getElementById("textoLaboratorio");
   contenedorInforme.innerHTML  = `<p>${informeTexto.replace(/\n/g, "<br>")}</p>`;
 
-  //const texto = window.registrosLaboratorio[clave];
-  //document.getElementById("textoLaboratorio").innerHTML = `<p>${texto}</p>`;
 }
 
 //-----------------------------------------
