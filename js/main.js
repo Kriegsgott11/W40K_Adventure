@@ -110,25 +110,11 @@ mostrarIntroduccion();
 function cargarSalaArchivo() {
   const salaImagen = 'img/room_Archivum.png';
 
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
-    <div id="texto-informes" style="display: flex; gap: 1em; margin-top: 1em;">
-      <div id="botones-informes" style="flex: 3; display: flex; flex-direction: column; gap: 0.5em;">
-        <button onclick="mostrarInforme(0)">Leer Informe A</button>
-        <button onclick="mostrarInforme(1)">Leer Informe B</button>
-        <button onclick="mostrarInforme(2)">Leer Informe C</button>
-      </div>
-      <div id="informe-mostrado" style="flex: 7; border: 1px solid #555; padding: 1em; min-height: 100px; color: white;"></div>
-    </div>
-    <div id="input-codigo" style="margin-top: 1em;">
-      <label for="codigo">Código de acceso:</label>
-      <input type="text" id="codigo" placeholder="">
-      <button onclick="verificarCodigoArchivo()">Validar</button>
-    </div>
-  `;
+  const data = {
+    salaImagen: salaImagen
+  };
 
-  window.informesArchivo = informes; // Guardamos los informes para accederlos desde mostrarInforme
+  cargarTemplate(data, "rooms/archivum.html", contenedorTerminal);
 }
 
 function mostrarInforme(index) {

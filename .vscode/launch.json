@@ -5,18 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to Firefox",
-            "port": 9222,
-            "request": "attach",
-            "type": "firefox-bin",
-            "webRoot": "${workspaceFolder}"
-        },
-        
-        {
-            "type": "firefox-bin",
+            "name": "Launch Chrome",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "/home/luken/repos/W40K_Adventure/index.html"
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
