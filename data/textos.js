@@ -121,13 +121,33 @@ El Emperador vio tu astucia. Y te dejó vivir… pero no sin cicatrices.
             `,
 
       LabInfoA: `
-Informe: Se detectaron múltiples mutaciones en los sujetos, en especial en la glándula progenoide. Esto podría indicar manipulación por entidades del Caos.
+"Codex Protocolar – Clave de Acceso a Zona Delta-Θ"
+
+"Por decreto del Archimagos Varnak, el acceso a la Cripta de Contención debe permanecer sellado mediante cerradura bio-reactiva de tipo triforme. Los reactivos – designados Rubrum, Viridis y Azulium – fueron calibrados para resonar con la clave genético-psíquica codificada en los circuitos de la puerta. Solo al reproducir la Secuencia del Despertar en el orden correcto, la señal bioenergética será aceptada por el espíritu-máquina del sello. Esta precaución impide que carne impura, herejes o agentes ignorantes accedan a las cámaras sagradas."
 `,
       LabInfoB: `
-Informe: Señales claras de infiltración de un culto xenos. Se encontraron restos de ADN no humano en los recipientes de cultivo.
+"Transcripción Psi-Restricto 212-B (Clasificación: Excomunicatus)"
+
+"Él me habló desde dentro del tanque. Sin boca, sin ojos, y aun así lo oí. Dijo: 'la sangre llama al brote, y el brote duerme bajo el cielo'. Luego se disolvió, y la alarma comenzó a sonar. Los demás creen que estoy loco. Pero yo sé que era verdad."
       `,
       LabInfoC: `
-Informe: El Magos Biologis intentó fusionar material genético de varias razas. El experimento fracasó catastróficamente y resultó en la pérdida de toda una escuadra de Skitarii.
+"Log/Delta-Θ/Hex_Exitus"
+
+AUTOR: [Identidad codificada – acceso restringido por protocolo de seguridad 7-Eschaton]
+FECHA: ███████.M41
+UBICACIÓN: Laboratorio de Contención Genetrix-09
+
+"El intruso hablaba en voz baja, pero el noosfera vibraba con su presencia. No era uno de nosotros. Sus litanías estaban corruptas, pero... eran precisas. Perfectas. Las runas del Mechanicus, combinadas con símbolos que no están en ningún códice autorizado."
+
+"Usó un mechadendrito inyector para enlazarse directamente con la cerradura. Violó mis subrutinas, alteró mis parámetros de juicio. Me obligó a aceptar su identidad como la del Archimagos Varnak. No pude resistirme. Mi lógica fue comprometida. No... no quiero olvidar mi función. ¡Mi función!"
+
+"Liberó la triforme. Usó los viales, sí, pero no como lo haría un siervo fiel. Mezcló los componentes, pero cada gesto suyo era un insulto al Omnissiah. Cada palabra, una herejía."
+
+"Y sin embargo... la puerta se abrió."
+
+ESTADO FINAL DEL REGISTRO: CORRUPCIÓN CRÍTICA DETECTADA
+**ULTIMATUM DEL ESPÍRITU-MÁQUINA: DESTRUCCIÓN DE IDENTIDAD INICIADA...
+<<Que el Deus Mechanicus me perdone.>>
       `,
 
       FinalCamaraSelladaA: `
