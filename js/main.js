@@ -282,7 +282,7 @@ function mostrarTextoLaboratorio(index) {
 //-----------------------------------------
 
 function mostrarCriptaHereje() {
-  const salaImagen = 'img/cripta_hereje.jpg';
+  const salaImagen = 'img/room_cripta_hereje.png';
 
   const data = {
     salaImagen: salaImagen
