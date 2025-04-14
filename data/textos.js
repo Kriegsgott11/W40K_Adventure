@@ -121,18 +121,50 @@ El Emperador vio tu astucia. Y te dejó vivir… pero no sin cicatrices.
             `,
 
       LabInfoA: `
-"Codex Protocolar – Clave de Acceso a Zona Delta-Θ"
+AUTOR: Magos Dominus Erevak Tholl
+UBICACIÓN: Genetrix-09, Subnivel Theta
+FECHA: 172.887.M41
+CLASIFICACIÓN: MAGENTA RESTRICTA
+DESTINATARIO: Archimagos Varnak
 
-"Por decreto del Archimagos Varnak, el acceso a la Cripta de Contención debe permanecer sellado mediante cerradura bio-reactiva de tipo triforme. Los reactivos – designados Rubrum, Viridis y Azulium – fueron calibrados para resonar con la clave genético-psíquica codificada en los circuitos de la puerta. Solo al reproducir la Secuencia del Despertar en el orden correcto, la señal bioenergética será aceptada por el espíritu-máquina del sello. Esta precaución impide que carne impura, herejes o agentes ignorantes accedan a las cámaras sagradas."
+Por orden directa del Archimagos, la cámara de contención Delta-Θ ha sido sellada mediante cerradura bio-reactiva triforme. El sistema requiere la activación secuencial de tres reactivos designados:
+- Rubrum
+- Viridis
+- Azulium
+
+Esta secuencia—conocida como El Despertar—resuena con la impronta psíquica del contenido. El orden incorrecto activa contramedidas letales.
+La cámara contiene al Sujeto P-17, alias "Alpha-Void 7", un psíquico Alfa-Plus extraído de Calix-Majoris. Ha demostrado habilidades de distorsión empírea, ruptura tecnológica y manipulación mental sin canal físico. Inmune a supresores estándar.
+Nivel de amenaza: Extremo.
 `,
       LabInfoB: `
-"Transcripción Psi-Restricto 212-B (Clasificación: Excomunicatus)"
+CLASIFICACIÓN: EXCOMUNICATUS
+FECHA: 173.001.M41
+UBICACIÓN: Subnivel Contención 3-B, Instalación Genetrix-09
+AUTOR DEL INFORME: Lexmechanic Junior Daro Voln
+SUPERVISIÓN: Magos Biologis Ketrah
+ESTADO DEL INFORME: Enviado previo a contención médica del emisor
 
-"Él me habló desde dentro del tanque. Sin boca, sin ojos, y aun así lo oí. Dijo: 'la sangre llama al brote, y el brote duerme bajo el cielo'. Luego se disolvió, y la alarma comenzó a sonar. Los demás creen que estoy loco. Pero yo sé que era verdad."
-      `,
+DESCRIPCIÓN DEL INCIDENTE:
+
+Durante ciclo de mantenimiento rutinario en tanque de contención del Sujeto P-17 (designación: Alpha-Void 7), el Lexmechanic Daro Voln reportó contacto sensorial anómalo no autorizado.
+
+Fragmento de su testimonio:
+
+"Él me habló desde dentro del tanque. Sin boca, sin ojos, y aun así lo oí. Dijo: 'La sangre llama al brote, y el brote duerme bajo el cielo'."
+"Luego su cuerpo se disolvió, como niebla dentro del fluido. La alarma se disparó, pero fue solo por un instante. Nadie más lo vio. Nadie más lo oyó."
+
+Voln fue observado intentando acceder al cogitador de control de mezcla triforme sin autorización. Exhibió conducta errática, murmurando frases incoherentes en binharico invertido y refiriéndose al sujeto como "el durmiente verdadero".
+
+Detenido por la servocría de seguridad antes de ejecutar la secuencia de apertura.
+
+MEDIDAS TOMADAS:
+
+- Voln trasladado a Módulo de Revisión Mental Sigma-4
+- Evaluación de corrupción psíquica en curso
+- Protocolo de Purga Cognitiva Lenta en preparación
+- Recomendación: conversión en servitor clase Menial-Drone si se confirma inestabilidad residual
+    `,
       LabInfoC: `
-"Log/Delta-Θ/Hex_Exitus"
-
 AUTOR: [Identidad codificada – acceso restringido por protocolo de seguridad 7-Eschaton]
 FECHA: ███████.M41
 UBICACIÓN: Laboratorio de Contención Genetrix-09
