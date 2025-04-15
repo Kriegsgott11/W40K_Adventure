@@ -45,15 +45,19 @@ main {
   overflow-y: auto;
 }
 
-/* Estilos especiales para la introducción tipo terminal */
+/* Estilos especiales para la introducción tipo terminal
+*/
+
 .intro-terminal {
   position: relative;
-  height: 100vh;
+  height: 120h; /* en lugar de 100vh, para dejar algo de espacio */
   padding: 20px;
   box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* comienza desde arriba */
+  overflow-y: auto; /* permite scroll vertical */
 
   color: #00ff88;
   background: rgba(10, 10, 10, 0.85);
@@ -61,6 +65,7 @@ main {
   box-shadow: 0 0 10px rgba(0, 255, 128, 0.2);
   border-radius: 8px;
 }
+
 
 .typewriter {
   white-space: pre-wrap;
