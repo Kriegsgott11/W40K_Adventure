@@ -176,12 +176,15 @@ function seleccionarOpcionCombate(index) {
   switch (index) {
     case 0:
       resultado = textos.CombateA;
+      sessionStorage.setItem("combate", "1");
       break;
     case 1:
       resultado = textos.CombateB;
+      sessionStorage.setItem("combate", "2");
       break;
     case 2:
       resultado = textos.CombateC;
+      sessionStorage.setItem("combate", "3");
       break;
     default:
       resultado = "Informe no disponible.";
@@ -355,57 +358,7 @@ function mostrarSalaFinal() {
   // Load the external template
   cargarTemplate(data, "rooms/claustrum_clausum.html", contenedorJuego);
 
-  /*
-  const descripcion = `
-    El acólito ingresa a la cámara sellada. El aire es denso y cargado de energía disforme.
-    Un círculo de cultistas entona cánticos blasfemos mientras, en el centro, un psíquico mutado tiembla, al borde de ser poseído.
-    Una voz en su cabeza —¿el Emperador...?— le susurra qué hacer.
-  `;
-
-  const decisiones = [
-    {
-      texto: "Intentar salvar al psíquico",
-      resultado: `
-        El acólito interrumpe el ritual e intenta liberar al psíquico del influjo del Caos.
-        Tras un sangriento combate logra romper el círculo, pero el psíquico huye y más tarde causa una masacre.
-        La Inquisición castiga al acólito por su imprudencia.
-      `
-    },
-    {
-      texto: "Purgar la herejía con fuego sagrado",
-      resultado: `
-        Sin dudarlo, el acólito activa granadas de fusión y lanza proyectiles incendiarios.
-        El ritual se interrumpe abruptamente, y los cultistas mueren entre gritos.
-        El psíquico es incinerado antes de que la entidad pueda tomar control.
-        El Emperador estará complacido.
-      `
-    },
-    {
-      texto: "Aceptar la voz en su mente",
-      resultado: `
-        Convencido de que el Emperador le habla, el acólito se arrodilla y acepta su "guía".
-        La entidad demoníaca penetra su alma, y en segundos ya no queda nada humano.
-        El acólito se convierte en un nuevo heraldo de la disformidad.
-      `
-    }
-  ];
-
-  const contenedor = document.getElementById("juego");
-  contenedor.innerHTML = `
-    <div class="sala-imagen" style="background-image: url('${salaImagen}');"></div>
-    <div class="descripcion-sala">${descripcion}</div>
-    <div class="contenedor-sala">
-      <div class="botones-sala">
-        ${decisiones.map((d, i) => `<button class="btn-opcion" onclick="mostrarResultadoFinal(${i})">${d.texto}</button>`).join('')}
-      </div>
-      <div id="resultado-final" class="texto-sala"></div>
-    </div>
-    <div id="boton-final" style="display: none; text-align: center; margin-top: 20px;">
-      <button onclick="mostrarTextoFinal()">Continuar</button>
-    </div>
-  `;
-*/
-  window._decisionesFinal = decisiones;
+  //window._decisionesFinal = decisiones;
 }
 
 function mostrarResultadoFinal(index) {
@@ -415,12 +368,15 @@ function mostrarResultadoFinal(index) {
   switch (index) {
     case 0:
       resultado = textos.FinalCamaraSelladaA;
+      sessionStorage.setItem("final", "A");
       break;
     case 1:
       resultado = textos.FinalCamaraSelladaA;
+      sessionStorage.setItem("final", "B");
       break;
     case 2:
       resultado = textos.FinalCamaraSelladaA;
+      sessionStorage.setItem("final", "C");
       break;
     default:
       resultado = "Informe no disponible.";
@@ -433,5 +389,65 @@ function mostrarResultadoFinal(index) {
   botones.forEach(btn => btn.disabled = true);
 
   document.getElementById("boton-final").style.display = "block";
+}
+
+function MostrarInformeFinal() {
+
+  const salaImagen = 'img/room_laboratorium.png';
+
+  const data = {
+    salaImagen: salaImagen
+  };
+
+  // Load the external template
+  cargarTemplate(data, "rooms/informe_final.html", contenedorJuego);
+}
+
+function SetInforme() {
+  const decisionCombate = sessionStorage.getItem("combate");
+  const decisionFinal = sessionStorage.getItem("final");
+  const nombre = sessionStorage.getItem("acolito");
+
+  if (!decisionCombate || !decisionFinal) {
+    document.getElementById("contenedor-informe").textContent =
+      "Error: decisiones no registradas.";
+    return;
+  }
+
+  const clave = decisionCombate + decisionFinal;
+  let texto = "";
+
+  switch (clave) {
+    case "1A":
+      texto = textos.Final1;
+      break;
+    case "1B":
+      texto = textos.Final2;
+      break;
+    case "1C":
+    case "2C":
+    case "3C":
+      texto = textos.Final3;
+      break;
+    case "2A":
+      texto = textos.Final4;
+      break;
+    case "2B":
+      texto = textos.Final5;
+      break;
+    case "3A":
+      texto = textos.Final6;
+      break;
+    case "3B":
+      texto = textos.Final7;
+      break;
+    default:
+      texto = "Error: combinación de decisiones inválida.";
+  }
+
+  texto = texto.replaceAll("[NOMBRE ARCHIVADO]", nombre);
+
+  const contenedorInforme = document.getElementById("texto-informe");
+  contenedorInforme.innerHTML  = `<p>${texto.replace(/\n/g, "<br>")}</p>`;
 }
 
