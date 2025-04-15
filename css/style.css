@@ -161,3 +161,50 @@ button:hover {
     overflow: auto;
     background-color: #111;
 }
+
+.opciones-sala-img {
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.opciones-sala-img img {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.opciones-sala-img img:hover {
+  transform: scale(1.03);
+}
+
+.opciones-sala-img img.seleccionada {
+  border: 4px solid #ff4d4d;
+  box-shadow: 0 0 12px #ff4d4d;
+}
+
+.resultado-sala-img {
+  height: 50%;
+  overflow: auto;
+  padding: 1rem;
+  background-color: #111;
+  border: 1px solid #555;
+  color: white;
+}
+
+.contenedor-inferior-img {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #222;
+  height: 50vh;
+  box-sizing: border-box;
+}

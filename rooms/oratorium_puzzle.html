@@ -10,13 +10,13 @@
   <div class="sala-imagen" style="background-image: url('{{salaImagen}}');"></div>
 </div>
 
-<div class="contenedor-inferior">
-  <div id="opciones-sala">
-    <button onclick="seleccionarSimbolo(0)">Adeptus Astartes</button>
-    <button onclick="seleccionarSimbolo(1)">Rosarius del Inquisidor</button>
-    <button onclick="seleccionarSimbolo(2)">Adeptus Mechanicus</button>
+<div class="contenedor-inferior-img">
+  <div class="opciones-sala-img">
+    <img src="{{emblemaAst}}" alt="Adeptus Astartes" onclick="seleccionarSimbolo(0)" />
+    <img src="{{emblemaInq}}" alt="Rosarius del Inquisidor" onclick="seleccionarSimbolo(1)" />
+    <img src="{{emblemaMec}}" alt="Adeptus Mechanicus" onclick="seleccionarSimbolo(2)" />
   </div>
-  <div id="resultado-sala">
+  <div id="resultado-sala-img" class="resultado-sala-img">
     <p>Selecciona un símbolo para colocarlo en el altar.</p>
   </div>
 </div>

@@ -210,9 +210,15 @@ function seleccionarOpcionCombate(index) {
 function mostrarCapillaSimbolos() {
 
   const salaImagen = 'img/room_capilla_puzzle.png';
+  const emblemaAst = 'img/puzzle_stone_astartes.png';
+  const emblemaInq = 'img/puzzle_stone_Inquisition.png';
+  const emblemaMec = 'img/puzzle_stone_mechanicum.png';
 
   const data = {
-    salaImagen: salaImagen
+    salaImagen: salaImagen,
+    emblemaAst: emblemaAst,
+    emblemaInq: emblemaInq,
+    emblemaMec: emblemaMec,
   };
 
   // Load the external template
@@ -221,8 +227,18 @@ function mostrarCapillaSimbolos() {
 }
 
 function seleccionarSimbolo(index) {
-  const resultado = document.getElementById("resultado-sala");
+  const resultado = document.getElementById("resultado-sala-img");
   const continuarBtn = document.getElementById("btn-continuar-puzzle");
+  const imagenes = document.querySelectorAll('.opciones-sala-imagenes img');
+
+  imagenes.forEach((img, i) => {
+    if (i === indice) {
+      img.classList.add('seleccionada');
+    } else {
+      img.classList.remove('seleccionada');
+    }
+  });
+
   let texto = "";
 
   switch(index) {
