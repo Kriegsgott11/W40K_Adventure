@@ -371,11 +371,11 @@ function mostrarResultadoFinal(index) {
       sessionStorage.setItem("final", "A");
       break;
     case 1:
-      resultado = textos.FinalCamaraSelladaA;
+      resultado = textos.FinalCamaraSelladaB;
       sessionStorage.setItem("final", "B");
       break;
     case 2:
-      resultado = textos.FinalCamaraSelladaA;
+      resultado = textos.FinalCamaraSelladaC;
       sessionStorage.setItem("final", "C");
       break;
     default:
@@ -385,8 +385,18 @@ function mostrarResultadoFinal(index) {
   const contenedorInforme = document.getElementById("resultado-sala");
   contenedorInforme.innerHTML  = `<p>${resultado.replace(/\n/g, "<br>")}</p>`;
 
-  const botones = document.querySelectorAll(".btn-opcion");
-  botones.forEach(btn => btn.disabled = true);
+  //const botones = document.querySelectorAll(".btn-opcion");
+  //botones.forEach(btn => btn.disabled = true);
+// Desactivar todos los botones después de elegir
+const btn0 = document.getElementById("0");
+btn0.disabled = true;
+btn0.style.opacity = 0.5;
+const btn1 = document.getElementById("1");
+btn1.disabled = true;
+btn1.style.opacity = 0.5;
+const btn2 = document.getElementById("2");
+btn2.disabled = true;
+btn2.style.opacity = 0.5;
 
   document.getElementById("boton-final").style.display = "block";
 }
